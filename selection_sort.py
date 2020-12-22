@@ -10,6 +10,18 @@
 # -------------------------------------------------------------------------------------- #
 
 
+def selection_sort_max(array):
+    # Loop through entire array
+    for i in range(len(array)):
+        # Find the maximum element in remaining unsorted array
+        max_index = i
+        for j in range(i + 1, len(array)):
+            if array[max_index] < array[j]:
+                max_index = j
+
+        array[i], array[max_index] = array[max_index], array[i]
+
+
 def selection_sort(array):
     # Loop through the entire array
     for i in range(len(array)):
@@ -29,5 +41,5 @@ array = [10, 1, 5, 50, 9, 12, 15, 30]
 small_array = [10, 5, 14, 3]
 
 print(array)
-selection_sort(array)
+selection_sort_max(array)
 print(array)
