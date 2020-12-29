@@ -16,9 +16,11 @@
  *
  *  - Brute Force -
  *      - time = O(n^m * m) => O(n^m) - Exponential
- *      - space = O(m^2)
+ *      - space = O(m^2) - Polynomial
  *
  *  - Optimized -
+ *      - time = O(n * m^2) - Polynomial
+ *      - space = O(m^2) - Polynomial
  *
  *************************************************************************************/
 
