@@ -25,20 +25,20 @@
 // 1.  Create the function
 const canConstruct = (target, wordBank, memo = {}) => {
     // 3. Define base case
-    if (target === '') {
-        return true;
-    }
+    if (target in memo) return memo[target];
+    if (target === '') return true;
 
     for (let word of wordBank) {
         if (target.indexOf(word) === 0) {
             // If prefix exists, we can slice the suffix from this for our recursion
             const suffix = target.slice(word.length);
-            if (canConstruct(suffix, wordBank) === true) {
+            if (canConstruct(suffix, wordBank, memo) === true) {
+                memo[target] = true;
                 return true;
             };
         }
     }
-
+    memo[target] = false;
     return false;
 };
 
